@@ -1,0 +1,44 @@
+@use '../util' as u;
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: u.em(50);
+  position: fixed;
+  inset: 0;
+  background-color: hsla(0, 0, 0, 0.3);
+  z-index: 100;
+  backdrop-filter: blur(15px) contrast(50%);
+
+  a {
+    color: var(--light-color);
+  }
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  gap: u.em(5);
+  font-size: clamp(u.rem(10), 2vw, u.rem(14));
+  display: none;
+
+  @include u.breakpoint(medium) {
+    display: flex;
+  }
+}
+
+
+
+header .menu {
+  width: u.em(20);
+
+  @include u.breakpoint(medium) {
+    display: none;
+  }
+}
+
+li:hover {
+  color: var(--green-color);
+  cursor: pointer;
+}

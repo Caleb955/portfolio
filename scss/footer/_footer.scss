@@ -1,0 +1,58 @@
+@use '../util' as u;
+
+footer {
+  background: var(--dark-color);
+  padding-block: u.em(15);
+  overflow: hidden;
+}
+
+.footer {
+  display: var(--flex-box);
+  flex-direction: column;
+  width: min(100% - 10, u.em(900));
+  margin-inline: auto;
+  gap: u.em(10);
+
+  @include u.breakpoint(medium) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: auto;
+    gap: 0;
+  }
+
+  &__img {
+    width: u.em(25);
+  }
+  
+  a {
+    border-radius: 50%;
+    display: var(--flex-box);
+  }
+
+  a:hover {
+    outline: solid var(--green-color);
+    outline-offset: u.em(5);
+  }
+
+  h6 {
+    margin-bottom: 0;
+    cursor: default;
+    color: var(--light-dark);
+  }
+
+  &__links {
+    display: flex;
+    gap: u.em(5);
+  }
+
+
+  &__auto {
+    display: flex;
+    align-items: center;
+  }
+
+  &__auto .small-icon {
+    width: u.em(15);
+  }
+}
